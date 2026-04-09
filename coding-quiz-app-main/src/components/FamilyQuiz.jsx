@@ -11,7 +11,7 @@ import grandMother from "../images/family/grandmother.png";
 import motherImage from "../images/family/mother.png";
 import sisterImage from "../images/family/sister.png";
 
-const FamilyQuiz = ({ handleBackToHome }) => {
+const FamilyQuiz = () => {
     const questions = [
         {
             image: brotherImage,
@@ -74,7 +74,7 @@ const FamilyQuiz = ({ handleBackToHome }) => {
     const [quizFinished, setQuizFinished] = useState(false);
     const [score, setScore] = useState(0);
 
-    const handleAnswerClick = (isCorrect, index) => {
+    const handleAnswerClick = (isCorrect) => {
         const newAnswers = [...userAnswers];
         newAnswers[currentIndex] = isCorrect;
 
@@ -176,7 +176,7 @@ const FamilyQuiz = ({ handleBackToHome }) => {
                                                             ? "bg-red-300" // Style for incorrect answer
                                                             : "bg-slate-200" // Default style
                                                     } hover:bg-slate-300`}
-                                                onClick={() => handleAnswerClick(answer.isCorrect, index)}
+                                                onClick={() => handleAnswerClick(answer.isCorrect)}
                                                 key={answer.answerText}
                                             >
                                                 {answer.answerText}

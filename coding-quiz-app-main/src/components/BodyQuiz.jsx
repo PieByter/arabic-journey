@@ -11,7 +11,7 @@ import head from "../images/body/head.png";
 import uarm from "../images/body/uarm.png";
 import leg from "../images/body/leg.png";
 
-const BodyQuiz = ({ handleBackToHome }) => {
+const BodyQuiz = () => {
     const questions = [
         {
             image: farm,
@@ -74,7 +74,7 @@ const BodyQuiz = ({ handleBackToHome }) => {
     const [quizFinished, setQuizFinished] = useState(false);
     const [score, setScore] = useState(0);
 
-    const handleAnswerClick = (isCorrect, index) => {
+    const handleAnswerClick = (isCorrect) => {
         const newAnswers = [...userAnswers];
         newAnswers[currentIndex] = isCorrect;
 
@@ -176,7 +176,7 @@ const BodyQuiz = ({ handleBackToHome }) => {
                                                             ? "bg-red-300" // Style for incorrect answer
                                                             : "bg-slate-200" // Default style
                                                     } hover:bg-slate-300`}
-                                                onClick={() => handleAnswerClick(answer.isCorrect, index)}
+                                                onClick={() => handleAnswerClick(answer.isCorrect)}
                                                 key={answer.answerText}
                                             >
                                                 {answer.answerText}

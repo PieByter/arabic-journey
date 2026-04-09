@@ -13,7 +13,7 @@ import pelican from "../images/animals/pelican.png";
 import tucan from "../images/animals/tucan.png";
 import turkey from "../images/animals/turkey.png";
 
-const AnimalQuiz = ({ handleBackToHome }) => {
+const AnimalQuiz = () => {
     const questions = [
         {
             image: bear,
@@ -94,7 +94,7 @@ const AnimalQuiz = ({ handleBackToHome }) => {
     const [quizFinished, setQuizFinished] = useState(false);
     const [score, setScore] = useState(0);
 
-    const handleAnswerClick = (isCorrect, index) => {
+    const handleAnswerClick = (isCorrect) => {
         const newAnswers = [...userAnswers];
         newAnswers[currentIndex] = isCorrect;
 
@@ -196,7 +196,7 @@ const AnimalQuiz = ({ handleBackToHome }) => {
                                                             ? "bg-red-300" // Style for incorrect answer
                                                             : "bg-slate-200" // Default style
                                                     } hover:bg-slate-300`}
-                                                onClick={() => handleAnswerClick(answer.isCorrect, index)}
+                                                onClick={() => handleAnswerClick(answer.isCorrect)}
                                                 key={answer.answerText}
                                             >
                                                 {answer.answerText}
